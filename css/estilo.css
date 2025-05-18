@@ -613,12 +613,3 @@ section#historia {
         padding: 1.875rem 1.25rem;
     }
 }
-
-@media (min-width: 1200px) {
-    .noticia,
-    .carrossel-calendario,
-    .conquistas,
-    .historia-cont {
-        max-width: 90rem; 
-    }
-}
