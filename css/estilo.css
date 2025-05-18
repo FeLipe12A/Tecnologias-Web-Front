@@ -89,6 +89,127 @@ header nav ul li#logo img{
     width: 4.0625rem;
     height: auto;
 }  
+
+/* ===== MENU HAMBURGUER RESPONSIVO ===== */
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3.75rem;
+    position: relative;
+}
+
+#logo-mobile {
+    display: none;
+    align-items: center;
+    height: 100%;
+    margin-left: 1rem;
+}
+
+#logo-mobile img {
+    width: 3rem;
+    height: auto;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    z-index: 120;
+}
+
+.menu-icon span {
+    display: block;
+    width: 2rem;
+    height: 0.20rem;
+    margin: 0.3rem 0;
+    background: white;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* MOBILE MENU */
+@media (max-width: 900px) {
+    header nav ul {
+        gap: 1.5rem;
+    }
+    .logo-desktop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        justify-content: space-between;
+        padding: 0 0.5rem;
+    }
+    #logo-mobile {
+        display: flex;
+    }
+    .logo-desktop {
+        display: none !important;
+    }
+    nav#menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 70vw;
+        max-width: 320px;
+        background: #1A1A1A;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.2);
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+        z-index: 110;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    nav#menu ul {
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        margin-top: 5rem;
+        align-items: flex-start;
+        padding-left: 2rem;
+    }
+    .menu-icon {
+        display: flex;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle:checked ~ .menu-icon span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .menu-toggle:checked ~ nav#menu {
+        transform: translateX(0);
+    }
+    nav#menu {
+        pointer-events: none;
+    }
+    .menu-toggle:checked ~ nav#menu {
+        pointer-events: auto;
+    }
+    header nav ul li a {
+        font-size: 1.2rem;
+        padding: 0.7rem 0;
+    }
+}
 /* Cabeçalho do site ate aqui */
 
 .jogo-info {
@@ -217,6 +338,7 @@ section#noticias{
 .noticia-secundaria {
     background: #FFFFFF;
     width: calc(25% - 1.25rem);
+    height: auto;
     margin: 0.6875rem;
     border-radius: 1rem;
     overflow: hidden;
@@ -586,7 +708,6 @@ section#historia {
     }
     .noticia-secundaria {
         width: calc(100% - 1.25rem);
-        height: 26.5625rem;
     }
     .jogo-info {
         flex-direction: column;
@@ -611,8 +732,5 @@ section#historia {
     }
     .carrossel-calendario {
         padding: 1.875rem 1.25rem;
-    }
-    section#calendario {
-        display: none;
     }
 }
