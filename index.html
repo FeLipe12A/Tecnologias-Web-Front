@@ -10,19 +10,30 @@
 <body>
     <header class="cabecalho">
         <div class="top-line"></div>
-        <nav id="menu">
-            <ul>
-                <li id="logo">
-                    <a href="#">
-                        <img src="imagens/logosp.png" alt="logoSP">
-                    </a>
-                </li>
-                <li><a href="#calendario">Próximos Jogos</a></li>
-                <li><a href="#historia">História</a></li>
-                <li><a href="#">Escalações</a></li>
-                <li><a href="paginas/campeonatos.html">Campeonatos</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <a href="#" id="logo-mobile">
+                <img src="imagens/logosp.png" alt="logoSP">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
+            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav id="menu">
+                <ul>
+                    <li id="logo" class="logo-desktop">
+                        <a href="#">
+                            <img src="imagens/logosp.png" alt="logoSP">
+                        </a>
+                    </li>
+                    <li><a href="#calendario">Próximos Jogos</a></li>
+                    <li><a href="#historia">História</a></li>
+                    <li><a href="#">Escalações</a></li>
+                    <li><a href="paginas/campeonatos.html">Campeonatos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <main>
         <section id="proxjogo">
