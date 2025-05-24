@@ -6,6 +6,7 @@
     <title>Home - SPFC</title>
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="icon" href="imagens/logosp.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
     <header class="cabecalho">
@@ -14,8 +15,8 @@
             <a href="#" id="logo-mobile">
                 <img src="imagens/logosp.png" alt="logoSP">
             </a>
-            <input type="checkbox" id="menu-toggle" class="menu-toggle" />
-            <label for="menu-toggle" class="menu-icon" aria-label="Abrir menu">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -27,7 +28,7 @@
                             <img src="imagens/logosp.png" alt="logoSP">
                         </a>
                     </li>
-                    <li><a href="#calendario">Próximos Jogos</a></li>
+                    <li><a href="#jogadores">Jogadores</a></li>
                     <li><a href="#historia">História</a></li>
                     <li><a href="#">Escalações</a></li>
                     <li><a href="paginas/campeonatos.html">Campeonatos</a></li>
@@ -87,7 +88,7 @@
         </section>
         <section id="calendario">
             <div class="carrossel-calendario">
-                <h1 class="calendario-titulo">PRÓXIMOS JOGOS</h1>
+                <h1>PRÓXIMOS JOGOS</h1>
                 <div class="proximos-jogos">
                     <input type="radio" name="carrossel" id="slide1" checked>
                     <input type="radio" name="carrossel" id="slide2">
@@ -203,7 +204,7 @@
         </section>
         <section id="galeria-titulos">
             <div class="conquistas">
-                <h1 class="galeria-titulo">TITULOS</h1>
+                <h1>TITULOS</h1>
                 <div class="galeria-conquistas">
                     <img src="imagens/titulos.jpeg" alt="conquistas-image" class="conquistas-img">
                     <div class="titulos-conquistas">
@@ -289,7 +290,7 @@
         </section>
         <section id="historia">
             <div class="historia-cont">
-                <h1 class="historia-titulo">HISTÓRIA</h1>
+                <h1>HISTÓRIA</h1>
                 <div class="historia-card">
                     <h4>Fundação</h4>
                     <div class="historia-conteudo">
@@ -323,7 +324,7 @@
                         </p>
                         <p>
                             <span class="destaque">Glória Internacional:</span> Sob o comando de <span class="destaque">Telê Santana</span>, o São Paulo viveu seu auge internacional nos anos 1990. Em uma sequência histórica e memorável:<br>
-                            &#9679; 1992: Campeão da <span class="destaque">Copa Libertadores da América</span> e, em seguida, do <span class="destaque">Mundial Interclubes</span> contra o Barcelona.<br>
+                            &#9679;1992: Campeão da <span class="destaque">Copa Libertadores da América</span> e, em seguida, do <span class="destaque">Mundial Interclubes</span> contra o Barcelona.<br>
                             &#9679; 1993: Bicampeão da <span class="destaque">Libertadores</span> e bicampeão <span class="destaque">Mundial</span>, vencendo o Milan.<br>
                             Essas conquistas colocaram o Tricolor na elite mundial e eternizaram o clube entre os maiores da história do futebol.
                         </p>
@@ -350,11 +351,65 @@
                 </div>
             </div>
         </section>
+        <section id="jogadores">
+            <div class="idolos">
+                <p>JOGADORES</p>
+                <h1>MAIORES ÍDOLOS</h1>
+                <div class="idolos-carrossel-group">
+                    <div class="item-container">
+                        <div class="carrosel">
+                            <div class="item" style="--delay: 2s"><img src="imagens/item1.jpg"></div>
+                            <div class="item" style="--delay: 4s"><img src="imagens/item2.jpg"></div>
+                            <div class="item" style="--delay: 6s"><img src="imagens/item3.png"></div>
+                        </div>
+                    </div>
+                    <div class="item-container">
+                        <div class="carrosel">
+                            <div class="item" style="--delay: 2s"><img src="imagens/item4.png"></div>
+                            <div class="item" style="--delay: 4s"><img src="imagens/item5.jpg"></div>
+                            <div class="item" style="--delay: 6s"><img src="imagens/item6.png"></div>
+                            
+                        </div>
+                    </div>
+                    <div class="item-container">
+                        <div class="carrosel">
+                            <div class="item" style="--delay: 2s"><img src="imagens/item7.png"></div>
+                            <div class="item" style="--delay: 4s"><img src="imagens/item8.png"></div>
+                            <div class="item" style="--delay: 6s"><img src="imagens/item9.png"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; Copyright 2025 - Todos os direitos reservados.</p>
+            <div class="marca">
+                <img src="imagens/logosp.png" alt="logoSP">
+                <p>São Paulo FC</p>
+            </div>
+            <div class="links">
+                <h3>Links Rápidos:</h3>
+                <ul>
+                    <li><a href="#top">Início</a></li>
+                    <li><a href="#noticias">Ultimas Notícias</a></li>
+                    <li><a href="#calendario">Próximos Jogos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="contato">
+                <h3>Contato:</h3>
+                <p>Email: spfc@gmail.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="redes-sociais">
+                <h3>Siga-nos</h3>
+				<a href="https://www.instagram.com/saopaulofc/" target="_blank"><span class="fab fa-instagram"></span></a>
+				<a href="https://x.com/saopaulofc" target="_blank"><span class="fab fa-x-twitter"></span></a>
+                <a href="https://www.youtube.com/spfctv"><span class="fab fa-youtube"></span></a>
+            </div>
         </div>
+        <div class="direitos"><p>&copy; Copyright 2025 - Todos os direitos reservados.</p></div>
     </footer>    
 </body>
 </html>

@@ -16,8 +16,8 @@ html, body {
     scroll-behavior: smooth;
 }
 
-main {
-    display: block;
+main h1 {
+    margin-bottom: 1.875rem;
 }
 
 .top-line {
@@ -86,7 +86,7 @@ header nav ul li#logo{
 }
 
 header nav ul li#logo img{
-    width: 4.0625rem;
+    width: 3.75rem;
     height: auto;
 }  
 /* Cabeçalho do site ate aqui */
@@ -152,7 +152,7 @@ header nav ul li#logo img{
 } 
 /* Proximos jogos ate aqui */
 
-section#noticias{
+section#noticias {
     background: var(--w);
     width: 100%;
     margin-top: 1.25rem;
@@ -203,6 +203,7 @@ section#noticias{
     bottom: 0;
     z-index: 3;
     background-image: linear-gradient(to top, #0e0f12, #0e0f12f2, #0e0f1200);
+    text-align: justify;
 }
 
 .noticia-principal-txt h3 {
@@ -250,6 +251,7 @@ section#noticias{
     width: 100%;
     font-size: 0.875rem;
     line-height: 1.5rem;
+    text-align: justify;
 }
 
 .noticia-secundaria-txt h3 {
@@ -273,10 +275,6 @@ section#calendario {
     z-index: 5;
 }
 
-.calendario-titulo {
-    margin-bottom: 1.875rem;
-}
-
 .proximos-jogos {
     position: relative;
     overflow: hidden;
@@ -293,7 +291,7 @@ input[type="radio"] {
 .slides {
     display: flex;
     width: 300%;
-    transition: transform 0.6s ease-in-out;
+    transition: margin-left 0.6s ease-in-out;
 }
 
 .slide {
@@ -348,15 +346,15 @@ input[type="radio"] {
 }
 
 #slide1:checked ~ .slides {
-    transform: translateX(0%);
+    margin-left: 0%;
 }
 
 #slide2:checked ~ .slides {
-    transform: translateX(-33.333%);
+    margin-left: -100%;
 }
 
 #slide3:checked ~ .slides {
-    transform: translateX(-66.666%);
+    margin-left: -200%;
 }
 
 .setas {
@@ -419,10 +417,6 @@ section#galeria-titulos {
     margin: 0 auto;
     position: relative;
     z-index: 5;
-}
-
-.galeria-titulo {
-    margin-bottom: 1.25rem;
 }
 
 .galeria-conquistas {
@@ -493,6 +487,7 @@ section#galeria-titulos {
 /* Galeria de conquistas ate aqui */
 
 section#historia {
+    background: var(--w);
     width: 100%;
     margin-top: 1.25rem;
 }
@@ -503,10 +498,6 @@ section#historia {
     margin: 0 auto;
     position: relative;
     z-index: 5;
-}
-
-.historia-titulo {
-    margin-bottom: 1.25rem;
 }
 
 .historia-card {
@@ -549,23 +540,184 @@ section#historia {
     color: var(--v);
     font-weight: bold;
 }
+/* Historia do time ate aqui */
+
+section#jogadores {
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+.idolos {
+    padding: 1.875rem 5.625rem;
+    width: 100%;
+    position: relative;
+    z-index: 5;
+}
+
+.idolos p {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 0.325rem;
+    font-size: 0.9rem;
+}
+
+.idolos-carrossel-group {
+    display: flex;
+    justify-content: center;
+    gap: 6rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.item-container {
+    width: 100%;
+    max-width: 320px;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 270px;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(203,0,23,0.05);
+}
+
+.carrosel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    display: block;
+}
+
+.item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    animation: slider-fade 8s linear infinite;
+    animation-delay: var(--delay, 0s);
+    z-index: 1;
+}
+
+.item-container:hover .item {
+    animation-play-state: paused !important;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+    box-shadow: 0 2px 16px 0 rgba(203,0,23,0.10);
+}
+
+@keyframes slider-fade {
+    0% { 
+        opacity: 0; z-index: 1; 
+    }
+    5% { 
+        opacity: 1; z-index: 2; 
+    }
+    25% { 
+        opacity: 1; z-index: 2; 
+    }
+    30% { 
+        opacity: 0; z-index: 1; 
+    }
+    100% { 
+        opacity: 0; z-index: 1; 
+    }
+}
 
 /* Rodapé do site */
 .rodape {
     background-color: #1A1A1A;
     color: #fff;
-    text-align: center;
-    padding: 1.25rem;
-    margin-top: 3.75rem;
+    padding: 1.875rem 1.25rem 0; 
+    margin-top: 2.5rem;
     border-top: 0.3125rem solid red;
-    position: absolute;
     width: 100%;
-    left: 0;
+    font-size: 0.9rem;
 }
 
 .rodape-conteudo {
-    max-width: 25rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
     margin: 0 auto;
+    max-width: 80%;
+    gap: 1.5rem;
+    text-align: center;
+}
+
+.rodape-conteudo > div {
+    flex: 1 1 12.5rem;
+    margin: 1.25rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rodape-conteudo img,
+.rodape-conteudo h3,
+.rodape-conteudo p,
+.rodape-conteudo ul,
+.rodape-conteudo li {
+    margin-bottom: 0.7rem;
+}
+
+.rodape-conteudo {
+    gap: 1.5rem;
+}
+
+.links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.links ul li a:hover {
+    color: red;
+}
+
+.marca img {
+    width: 3.125rem;
+    height: auto;
+}
+
+.redes-sociais {
+    display: flex;
+    flex-direction: row;
+    gap: 0.8rem;
+}
+
+.redes-sociais a {
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.redes-sociais a:hover {
+    color: red;
+}
+
+.direitos {
+    text-align: center;
+    border-top: 0.0625rem solid #333;
+    margin-top: 1rem;
+    padding: 0.9rem 0 1rem;
+    color: var(--w);
 }
 
 /* Responsivo */
@@ -610,15 +762,23 @@ section#historia {
         padding: 0 1.25rem;
     }
     .carrossel-calendario {
+        display: none;
+    }
+    .rodape-conteudo {
+        font-size: 0.775rem;
+    }
+    .idolos {
         padding: 1.875rem 1.25rem;
+    }
+    .idolos-carrossel-group {
+        flex-wrap: wrap;
     }
 }
 
 /* Menu Hamburguer Responsivo */
 .header-content {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     height: 3.75rem;
     position: relative;
 }
@@ -656,11 +816,11 @@ section#historia {
 
 .menu-icon span {
     display: block;
-    width: 2rem;
-    height: 0.20rem;
+    width: 100%;
+    height: 0.2rem;
     margin: 0.3rem 0;
     background: white;
-    border-radius: 2px;
+    border-radius: 0.2rem;
     transition: 0.3s;
 }
 
