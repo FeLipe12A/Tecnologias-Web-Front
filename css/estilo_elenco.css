@@ -1,0 +1,142 @@
+@import url('estilo.css');
+
+section#banner {
+    background: url('../imagens/escudo.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-titulo {
+    width: 100%;
+    padding: 90px 30px;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 5;
+    background: rgba(0, 0, 0, 0.55);
+}
+
+.banner-titulo h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+}
+
+.menu {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0 1rem;
+    list-style: none;
+    gap: 1rem;
+    height: 3.5rem;
+}
+
+.menu ul li {
+    flex: 1 1 0;
+    text-align: center;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.menu ul li a {
+    position: absolute;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 0.625rem 0.625rem 1.4rem;
+    position: relative;
+    z-index: 2;
+}
+
+.menu ul li a:hover {
+    color: #fff;
+}
+
+.menu ul li.active a,
+.menu ul li:hover a {
+    color: #fff;
+}
+
+.menu ul li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6px;
+    background: var(--v); 
+    border-radius: 2px;
+    transition: height 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.menu ul li:hover::after,
+.menu ul li.active::after {
+    height: 100%;
+}
+
+section#elenco {
+    width: 100%;
+    margin-top: 1.25rem;
+}
+
+.elenco-container { 
+    padding: 1.875rem 5.625rem;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+
+.elenco-container > div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.elenco-container ul {
+    list-style: none;
+}
+
+.elenco-container ul li {
+    padding: 0.625rem 1rem;
+}
+
+.elenco-container ul li abbr {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .elenco-container {
+        padding: 1.875rem 2rem;
+    }
+    .banner-titulo h1 {
+        font-size: 2.3rem;
+    }
+    .menu ul {
+        gap: 0.5rem;
+        padding: 0 0.5rem;
+    }
+    .menu ul li a {
+        font-size: 0.7rem;
+        padding: 0 0 1.4rem;
+    }
+}

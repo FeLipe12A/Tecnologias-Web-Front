@@ -561,7 +561,7 @@ section#jogadores {
     font-size: 0.9rem;
 }
 
-.idolos-carrossel-group {
+.idolos-carrossel-grupo {
     display: flex;
     justify-content: center;
     gap: 6rem;
@@ -571,14 +571,14 @@ section#jogadores {
 
 .item-container {
     width: 100%;
-    max-width: 320px;
+    max-width: 20rem;
     margin: 0;
     overflow: hidden;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 270px;
+    height: 16.875rem;
     border-radius: 1rem;
     box-shadow: 0 2px 16px 0 rgba(203,0,23,0.05);
 }
@@ -600,7 +600,7 @@ section#jogadores {
     justify-content: center;
     align-items: center;
     opacity: 0;
-    animation: slider-fade 8s linear infinite;
+    animation: slider 8s linear infinite;
     animation-delay: var(--delay, 0s);
     z-index: 1;
 }
@@ -617,21 +617,26 @@ section#jogadores {
     box-shadow: 0 2px 16px 0 rgba(203,0,23,0.10);
 }
 
-@keyframes slider-fade {
+@keyframes slider {
     0% { 
-        opacity: 0; z-index: 1; 
+        opacity: 0; 
+        z-index: 1; 
     }
     5% { 
-        opacity: 1; z-index: 2; 
+        opacity: 1; 
+        z-index: 2; 
     }
     25% { 
-        opacity: 1; z-index: 2; 
+        opacity: 1; 
+        z-index: 2; 
     }
     30% { 
-        opacity: 0; z-index: 1; 
+        opacity: 0; 
+        z-index: 1; 
     }
     100% { 
-        opacity: 0; z-index: 1; 
+        opacity: 0; 
+        z-index: 1; 
     }
 }
 
@@ -717,6 +722,7 @@ section#jogadores {
     border-top: 0.0625rem solid #333;
     margin-top: 1rem;
     padding: 0.9rem 0 1rem;
+    font-size: 0.9rem;
     color: var(--w);
 }
 
@@ -770,7 +776,7 @@ section#jogadores {
     .idolos {
         padding: 1.875rem 1.25rem;
     }
-    .idolos-carrossel-group {
+    .idolos-carrossel-grupo {
         flex-wrap: wrap;
     }
 }
@@ -841,7 +847,7 @@ section#jogadores {
         right: 0;
         height: 100vh;
         width: 70vw;
-        max-width: 320px;
+        max-width: 20rem;
         background: #1A1A1A;
         box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
         transform: translateX(100%);
