@@ -45,7 +45,7 @@ section#campeonatos {
     width: 100%;
     background: linear-gradient(120deg, #f8f8f8 60%, #ffe5e5 100%);
     padding: 60px 90px; 
-    box-shadow: 0 4px 24px 0 rgba(203,0,23,0.08);
+    box-shadow: 0 4px 24px 0 rgba(203, 0, 23, 0.08);
     border-radius: 0 0 24px 24px;
     position: relative;
     z-index: 2;
@@ -59,13 +59,13 @@ section#campeonatos {
     margin: 0 auto;
     background: #fff;
     border-radius: 18px;
-    box-shadow: 0 2px 16px 0 rgba(203,0,23,0.10);
+    box-shadow: 0 2px 16px 0 rgba(203, 0, 23, 0.10);
     position: relative;
     z-index: 3;
     transition: box-shadow 0.2s;
 }
 .camp-cont:hover {
-    box-shadow: 0 8px 32px 0 rgba(203,0,23,0.18);
+    box-shadow: 0 8px 32px 0 rgba(203, 0, 23, 0.18);
 }
 
 .camp-cont h1 {
