@@ -10,19 +10,30 @@
 <body>
     <header class="cabecalho">
         <div class="top-line"></div>
-        <nav id="menu">
-            <ul>
-                <li id="logo">
-                    <a href="../index.html">
-                        <img src="../imagens/logosp.png" alt="logoSP">
-                    </a>
-                </li>
-                <li><a href="../index.html">Proxímos Jogos</a></li>
-                <li><a href="../index.html">História</a></li>
-                <li><a href="../index.html">Escalações</a></li>
-                <li><a href="#">Campeonatos</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <a href="#" id="logo-mobile">
+                <img src="../imagens/logosp.png" alt="logoSP">
+            </a>
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+            <nav id="menu">
+                <ul>
+                    <li id="logo" class="logo-desktop">
+                        <a href="../index.html">
+                            <img src="../imagens/logosp.png" alt="logoSP">
+                        </a>
+                    </li>
+                    <li><a href="../index.html">Jogadores</a></li>
+                    <li><a href="../index.html">História</a></li>
+                    <li><a href="../paginas/elenco.html">Elenco</a></li>
+                    <li><a href="#">Campeonatos</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
     <section id="banner">
         <section class="banner-conteudo">
@@ -60,8 +71,32 @@
     </section>
     <footer class="rodape">
         <div class="rodape-conteudo">
-            <p>&copy; Copyright 2025 - Todos os direitos reservados.</p>
+            <div class="marca">
+                <img src="../imagens/logosp.png" alt="logoSP">
+                <p>São Paulo FC</p>
+            </div>
+            <div class="links">
+                <h3>Links Rápidos:</h3>
+                <ul>
+                    <li><a href="#top">Início</a></li>
+                    <li><a href="../index.html">Ultimas Notícias</a></li>
+                    <li><a href="../index.html">Próximos Jogos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+            </div>
+            <div class="contato">
+                <h3>Contato:</h3>
+                <p>Email: spfc@gmail.com</p>
+                <p>Telefone: (11) 1234-5678</p>
+            </div>
+            <div class="redes-sociais">
+                <h3>Siga-nos</h3>
+				<a href="https://www.instagram.com/saopaulofc/" target="_blank"><span class="fab fa-instagram"></span></a>
+				<a href="https://x.com/saopaulofc" target="_blank"><span class="fab fa-x-twitter"></span></a>
+                <a href="https://www.youtube.com/spfctv" target="_blank"><span class="fab fa-youtube"></span></a>
+            </div>
         </div>
+        <div class="direitos"><p>&copy; Copyright 2025 - Todos os direitos reservados.</p></div>
     </footer> 
 </body>
 </html>
