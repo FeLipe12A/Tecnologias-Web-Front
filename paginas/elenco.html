@@ -22,41 +22,37 @@
             box-sizing: border-box;
         }
         html, body {
-            padding-top: 1.875rem;
+            padding-top: 4rem;
             font-family: var(--fonte);
             scroll-behavior: smooth;
         }
         .nav-link:hover {
             color: #ff0000 !important;
         }
-        .jogo-hover {
-            transition: transform 0.3s ease;
-            border-left: 0 solid transparent;
-            border-right: 0 solid transparent;
+        .navbar-elenco .nav-link:hover {
+            color: #ff0000 !important;
         }
-        .jogo-hover:hover {
-            transform: scale(1.03);
-            border-left: 4px solid transparent;
-            border-right: 4px solid transparent;
-            border-image: linear-gradient(to bottom, red, white, black) 1;
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        .navbar-elenco .nav-link.active {
+            background-color: #ff0000 !important;
         }
-        .jogo-hover .col-md-2 {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
+        .card:hover {
+            transform: translateY(-10px);
+            transition: transform 0.5s ease;
+        }
+        @media (max-width: 576px) {
+            .direitos {
+                font-size: 0.75rem !important;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="fixed-top w-100 bg-danger" style="height: 0.3125rem; z-index: 1000;"></div>
-        <nav class="navbar navbar-expand-lg fixed-top border-top border-white border-4 py-1" data-bs-theme="dark"
+        <nav class="navbar navbar-expand-md fixed-top border-top border-white border-4 py-1" data-bs-theme="dark"
             style="top: 0.3125rem; z-index: 100; background-color: var(--b);">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="../index.html">
                     <img src="../imagens/logosp.png" width="50" height="50" class="d-inline-block align-text-top ms-2">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -66,454 +62,711 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto me-4 gap-lg-4 text-end">
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="../index.html">Jogadores</a>
+                            <a class="nav-link text-white" href="../index.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="../index.html">História</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Elenco</a>
+                            <a class="nav-link text-white" href="estatisticas.html">Estatísticas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Campeonatos</a>
+                            <a class="nav-link text-white" href="#">Elenco</a>
                         </li>
                     </ul>
                 </div>
+            </div>
+        </nav>
+        <nav id="navbar-example2" class="navbar navbar-expand-md navbar-elenco bg-body-secondary px-3 mb-2 fixed-top"
+            style="top: 78px; z-index: 99;">
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavElenco" aria-controls="navbarNavElenco" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavElenco">
+                <ul class="nav nav-pills m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#goleiros">Goleiros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#zagueiros">Zagueiros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#laterais">Laterais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#volantes">Volantes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#meias">Meias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#atacantes">Atacantes</a>
+                    </li>
+                </ul>
             </div>
         </nav>
     </header>
     <main>
         <section class="w-100 my-5">
             <div class="container">
-                <div class="mb-3">
-                    <p class="fs-6 fw-bold text-danger mb-1">CALENDÁRIO</p>
-                    <h1 class="fs-4 fw-bold">RESULTADOS DE JOGOS</h1>
-                </div>
-                <!-- Resultado Jogo 1 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">QUA 14 MAIO</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">Fase de grupos</div>
-                            <div class="text-muted small">Estádio MorumBIS</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">1 - 1</div>
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">Libertad</p>
-                                <img src="../imagens/logolibertad.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/copa_libertadores.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Resultado Jogo 2 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">SÁB 17 MAIO</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">9ª Rodada</div>
-                            <div class="text-muted small">Estádio MorumBIS</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">2 - 1</div>
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">Grêmio</p>
-                                <img src="../imagens/logogremio.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Resultado Jogo 3 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">TER 20 MAIO</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">3ª Rodada</div>
-                            <div class="text-muted small">Estádio dos Aflitos</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">Nautico</p>
-                                <img src="../imagens/logonautico.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">1 - 2</div>
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/copa_brasil.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Resultado Jogo 4 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">SÁB 24 MAIO</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">10ª Rodada</div>
-                            <div class="text-muted small">Estádio MorumBIS</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">0 - 2</div>
-                            <div class="d-flex flex-column align-items-center mx-2">
-                                <p class="mb-1 fw-bold">Mirassol</p>
-                                <img src="../imagens/logomirassol.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Ver mais resultados -->
-                <div class="accordion mt-3" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Ver mais resultados
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!-- Resultado jogo 5 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">TER 27 MAIO</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">Fase de grupos</div>
-                                            <div class="text-muted small">Estádio MorumBIS</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">2 - 1</div>
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">Talleres</p>
-                                                <img src="../imagens/logotalleres.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/copa_libertadores.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                <div data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-root-margin="0px 0px -40%" data-bs-smooth-scroll="true" class="scrollspy-example p-0" tabindex="0">
+                    <!-- Seção de Goleiros -->
+                    <div id="goleiros" class="row g-3 my-2 pb-2" style="border-bottom: 2px solid var(--v);">
+                        <h1 class="fs-4 fw-bold mb-2">GOLEIROS</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Goleiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/rafael.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">23</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Rafael</h5>
+                                    <p class="card-text mb-1 small">Idade: 32 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,86m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">20</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">5</div>
+                                        <div class="text-secondary small">Defesas PG</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">72%</div>
+                                        <div class="text-secondary small">Defesas</div>
                                     </div>
                                 </div>
-                                <!-- Resultado jogo 6 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">SÁB 31 MAIO</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">11ª Rodada</div>
-                                            <div class="text-muted small">Arena Fonte Nova</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">Bahia</p>
-                                                <img src="../imagens/logobahia.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">2 - 1</div>
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Goleiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/jandrei.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">93</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Jandrei</h5>
+                                    <p class="card-text mb-1 small">Idade: 34 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,94m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">6</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Defesas PG</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">68%</div>
+                                        <div class="text-secondary small">Defesas</div>
                                     </div>
                                 </div>
-                                <!-- Resultado jogo 7 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">QUI 12 JUN</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">12ª Rodada</div>
-                                            <div class="text-muted small">Estádio MorumBIS</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="bg-dark text-white fw-bold px-3 py-1 mx-3 rounded" style="font-size: 1.2rem;">1 - 3</div>
-                                            <div class="d-flex flex-column align-items-center mx-2">
-                                                <p class="mb-1 fw-bold">Vasco</p>
-                                                <img src="../imagens/logovasco.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Goleiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/young.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">23</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Young</h5>
+                                    <p class="card-text mb-1 small">Idade: 23 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 2,02m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">4</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Defesas PG</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">80%</div>
+                                        <div class="text-secondary small">Defesas</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section class="w-100 my-5">
-            <div class="container">
-                <div class="mb-3">
-                    <p class="fs-6 fw-bold text-danger mb-1">CALENDÁRIO</p>
-                    <h1 class="fs-4 fw-bold">PRÓXIMOS JOGOS</h1>
-                </div>
-                <!-- Proximos Jogo 1 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">SEX 13 JUL</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">13ª Rodada</div>
-                            <div class="text-muted small">Estádio do Maracanã</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-1 mx-2">
-                                <p class="mb-0 fw-bold">Flamengo</p>
-                                <img src="../imagens/logoflamengo.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-1 mx-2">
-                                <p class="mb-0 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Proximos Jogo 2 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">QUA 16 JUL</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">14ª Rodada</div>
-                            <div class="text-muted small">Estádio do Bragantino</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">Bragantino</p>
-                                <img src="../imagens/logobraga.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Proximos Jogo 3 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">SAB 19 JUL</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">15ª Rodada</div>
-                            <div class="text-muted small">Estádio MorumBIS</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">Corinthians</p>
-                                <img src="../imagens/logocorin.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Proximos Jogo 4 -->
-                <div class="jogo-hover">
-                    <div class="row border-bottom py-3 align-items-center">
-                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                            <div class="fw-bold">QUI 24 JUL</div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <div class="text-muted small">16ª Rodada</div>
-                            <div class="text-muted small">Estádio Alfredo Jaconi</div>
-                        </div>
-                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">Juventude</p>
-                                <img src="../imagens/logojuve.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                <p class="mb-0 fw-bold">São Paulo</p>
-                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                        </div>
-                    </div>
-                </div>
-                <!-- Ver mais jogos -->
-                <div class="accordion mt-3" id="accordionExample">
-                    <div class="accordion-item">
-                        <h2 class="accordion-header">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                                Ver mais jogos
-                            </button>
-                        </h2>
-                        <div id="collapseTwo" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-                            <div class="accordion-body">
-                                <!-- Proximos jogo 5 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">DOM 27 JUL</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">17ª Rodada</div>
-                                            <div class="text-muted small">Estádio MorumBIS</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">Fluminense</p>
-                                                <img src="../imagens/logofluminense.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                    <!-- Seção de Zagueiros -->
+                    <div id="zagueiros" class="row g-3 my-3 pb-2" style="border-bottom: 2px solid var(--v);">
+                        <h1 class="fs-4 fw-bold mb-3">ZAGUEIROS</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Zagueiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/arboleda.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">5</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Arboleda</h5>
+                                    <p class="card-text mb-1 small">Idade: 33 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Equatoriano</p>
+                                    <p class="card-text mb-1 small">Altura: 1,89m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">15</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Assistências</div>
                                     </div>
                                 </div>
-                                <!-- Proximos jogo 6 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">QUI 31 JUL</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">Oitavas de Final</div>
-                                            <div class="text-muted small">Estadio MorumBIS</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">Athletico-PR</p>
-                                                <img src="../imagens/logoathletico.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/copa_brasil.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Zagueiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/alanfranco.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">28</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Alan Franco</h5>
+                                    <p class="card-text mb-1 small">Idade: 28 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Argentino</p>
+                                    <p class="card-text mb-1 small">Altura: 1,83m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">9</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Assistências</div>
                                     </div>
                                 </div>
-                                <!-- Proximos jogo 7 -->
-                                <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">DOM 03 AGO</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">18ª Rodada</div>
-                                            <div class="text-muted small">Estádio Beira-Rio</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">Internacional</p>
-                                                <img src="../imagens/logointernacional.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/liga_brasileirao.png" class="img-fluid" style="height: 60px;">
-                                        </div>
-                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Zagueiros -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/sabino.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">35</div>
                                 </div>
-                                <!-- Proximos jogo 8 -->
-                                 <div class="jogo-hover">
-                                    <div class="row border-bottom py-3 align-items-center">
-                                        <div class="col-12 col-md-2 text-md-start text-center mb-2 mb-md-0">
-                                            <div class="fw-bold">QUA 06 AGO</div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <div class="text-muted small">Oitavas de Final</div>
-                                            <div class="text-muted small">Arena da Baixada</div>
-                                        </div>
-                                        <div class="col-12 col-md-6 d-flex justify-content-center align-items-center flex-wrap flex-md-nowrap text-center">
-                                            <div class="d-flex flex-column flex-sm-row align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">Athletico-PR</p>
-                                                <img src="../imagens/logoathletico.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                            <div class="fw-bold" style="font-size: 1.2rem;">x</div>
-                                            <div class="d-flex flex-column flex-sm-row-reverse align-items-center text-center gap-2 mx-2">
-                                                <p class="mb-0 fw-bold">São Paulo</p>
-                                                <img src="../imagens/logosp.png" class="img-fluid" style="height: 40px;">
-                                            </div>
-                                        </div>
-                                        <div class="col-12 col-md-2 text-center text-md-start mb-2 mb-md-0">
-                                            <img src="../imagens/copa_brasil.png" class="img-fluid" style="height: 60px;">
-                                        </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Sabino</h5>
+                                    <p class="card-text mb-1 small">Idade: 28 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,84m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">6</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Assistências</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Seção de Laterais -->
+                    <div id="laterais" class="row g-3 my-3 pb-2" style="border-bottom: 2px solid var(--v);">
+                        <h1 class="fs-4 fw-bold mb-3">LATERAIS</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Laterais -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/cedric.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">5</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Cédric Soares</h5>
+                                    <p class="card-text mb-1 small">Idade: 33 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Português</p>
+                                    <p class="card-text mb-1 small">Altura: 1,72m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">10</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Laterais -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/enzodiaz.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">13</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Enzo Díaz</h5>
+                                    <p class="card-text mb-1 small">Idade: 29 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Argentino</p>
+                                    <p class="card-text mb-1 small">Altura: 1,75m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">11</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Laterais -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/wendell.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">18</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Wendell</h5>
+                                    <p class="card-text mb-1 small">Idade: 31 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,76m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">8</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Seção de Volantes -->
+                    <div id="volantes" class="row g-3 my-3 pb-2" style="border-bottom: 2px solid var(--v);">
+                        <h1 class="fs-4 fw-bold mb-3">VOLANTES</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Volantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/pablomaia.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">29</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Pablo Maia</h5>
+                                    <p class="card-text mb-1 small">Idade: 23 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,78m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">8</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Volantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/alisson.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">25</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Alisson</h5>
+                                    <p class="card-text mb-1 small">Idade: 32 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,74m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">11</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Volantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/bobadilla.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">21</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Damián Bobadilla</h5>
+                                    <p class="card-text mb-1 small">Idade: 24 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Paraguaio</p>
+                                    <p class="card-text mb-1 small">Altura: 1,81m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">8</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Seção de Meias -->
+                    <div id="meias" class="row g-3 my-3 pb-2" style="border-bottom: 2px solid var(--v);">
+                        <h1 class="fs-4 fw-bold mb-3">MEIAS</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Meias -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/oscar.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">8</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Oscar</h5>
+                                    <p class="card-text mb-1 small">Idade: 33 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,79m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">9</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">3</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Meias -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/rodriguinho.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">18</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Rodriguinho</h5>
+                                    <p class="card-text mb-1 small">Idade: 21 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,85m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">5</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Meias -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/matheusalves.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">47</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Matheus Alves</h5>
+                                    <p class="card-text mb-1 small">Idade: 20 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,79m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">10</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">3</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Seção de Atacantes -->
+                    <div id="atacantes" class="row g-3 my-3">
+                        <h1 class="fs-4 fw-bold mb-3">ATACANTES</h1>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 1 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/lucas.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">7</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Lucas Moura</h5>
+                                    <p class="card-text mb-1 small">Idade: 32 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,72m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">8</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">3</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 2 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/calleri.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">9</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Calleri</h5>
+                                    <p class="card-text mb-1 small">Idade: 31 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Argentino</p>
+                                    <p class="card-text mb-1 small">Altura: 1,81m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">10</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">3</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 3 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/luciano.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">10</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Luciano</h5>
+                                    <p class="card-text mb-1 small">Idade: 32 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,81m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">18</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">9</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 4 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/ferreirinha.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">11</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Ferreirinha</h5>
+                                    <p class="card-text mb-1 small">Idade: 27 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,76m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">12</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">5</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">2</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 5 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/andresilva.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">17</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">André Silva</h5>
+                                    <p class="card-text mb-1 small">Idade: 28 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,81m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">19</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">11</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">1</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <!-- Card 6 - Atacantes -->
+                            <div class="card shadow-sm mb-4" style="height: auto;">
+                                <div class="position-relative overflow-hidden rounded" style="height: 450px;">
+                                    <img src="../imagens/ryanfrancisco.png" class="card-img-top img-fluid object-fit-cover h-100 w-100">
+                                    <div class="position-absolute rounded-circle bg-danger text-white fw-bold d-flex align-items-center justify-content-center"
+                                        style="width: 40px; height: 40px; top: 15px; left: 15px;">49</div>
+                                </div>
+                                <div class="card-body my-2 mx-3 px-2 py-3">
+                                    <h5 class="card-title fw-bold mb-2">Ryan Francisco</h5>
+                                    <p class="card-text mb-1 small">Idade: 18 anos</p>
+                                    <p class="card-text mb-1 small">Nacionalidade: Brasileiro</p>
+                                    <p class="card-text mb-1 small">Altura: 1,75m</p>
+                                </div>
+                                <div class="d-flex bg-light border rounded-3 mt-auto m-3 py-2 justify-content-around">
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">7</div>
+                                        <div class="text-secondary small">Jogos</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">3</div>
+                                        <div class="text-secondary small">Gols</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="fw-bold text-danger">0</div>
+                                        <div class="text-secondary small">Assistências</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -540,9 +793,12 @@
             </div>
             <div class="col-12 col-md-6 col-lg-3 d-flex flex-column gap-2">
                 <h3 class="fs-6 fw-bold">Siga-nos</h3>
-                <a class="nav-link fs-5" href="https://www.instagram.com/saopaulofc/" target="_blank"><span class="fab fa-instagram"></span></a>
-                <a class="nav-link fs-5" href="https://x.com/saopaulofc" target="_blank"><span class="fab fa-x-twitter"></span></a>
-                <a class="nav-link fs-5" href="https://www.youtube.com/spfctv" target="_blank"><span class="fab fa-youtube"></span></a>
+                <a class="nav-link fs-5" href="https://www.instagram.com/saopaulofc/" target="_blank"><span
+                        class="fab fa-instagram"></span></a>
+                <a class="nav-link fs-5" href="https://x.com/saopaulofc" target="_blank"><span
+                        class="fab fa-x-twitter"></span></a>
+                <a class="nav-link fs-5" href="https://www.youtube.com/spfctv" target="_blank"><span
+                        class="fab fa-youtube"></span></a>
             </div>
         </div>
         <div class="text-center top-50 pt-3 border-top border-secondary border-1">
